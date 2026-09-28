@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        /* ---------------- HEADER ---------------- */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 15px 8%;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #222;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #2879ff;
+        }
+
+        /* Search */
+        .search-box {
+            flex: 1;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            background-color: #f1f5ff;
+            border-radius: 8px;
+            padding: 0 15px;
+        }
+
+        .search-box span {
+            margin-right: 10px;
+        }
+
+        .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 15px;
+        }
+
+        /* Header right */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            white-space: nowrap;
+        }
+
+        .header-right button {
+            padding: 9px 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2879ff;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .header-right span {
+            cursor: pointer;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            padding: 12px;
+            border-top: 1px solid #eee;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2879ff;
+        }
+
+        /* ---------------- MAIN ---------------- */
+        main {
+            width: 85%;
+            margin: 25px auto;
+        }
+
+        /* ---------------- POPULAR SECTION ---------------- */
+        .deal-section {
+            background: linear-gradient(135deg, #e7d9ff, #c8b5ff);
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        .deal-section h2 {
+            margin-bottom: 18px;
+        }
+
+        /* Product row */
+        .product-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        /* Product card */
+        .product-card {
+            background-color: white;
+            padding: 10px;
+            border-radius: 12px;
+            transition: 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Product image */
+        .product-image {
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 90px;
+            margin-bottom: 12px;
+        }
+
+        /* Different backgrounds */
+        .watch { background-color: #e8efff; }
+        .toy { background-color: #fff1d6; }
+        .bottle { background-color: #dff6f2; }
+        .fashion { background-color: #ffe1ed; }
+
+        /* Product text */
+        .product-card h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        /* ---------------- TECHNOLOGY ---------------- */
+        .tech-section {
+            background: linear-gradient(135deg, #5b45ff, #8175ff);
+            padding: 25px;
+            border-radius: 16px;
+            color: white;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 5px;
+        }
+
+        .section-heading p {
+            font-size: 14px;
+        }
+
+        /* View button */
+        .view-button {
+            border: none;
+            background-color: white;
+            color: #4b3cff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* Tech products */
+        .tech-products {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .tech-card {
+            background-color: white;
+            color: #222;
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .tech-image {
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 75px;
+            margin-bottom: 10px;
+        }
+
+        /* Tech backgrounds */
+        .phone { background-color: #eee5ff; }
+        .fridge { background-color: #e3f4ff; }
+        .laptop { background-color: #e8e8e8; }
+        .headphones { background-color: #e2f0e8; }
+        .tv { background-color: #fff0db; }
+
+        .tech-card h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .tech-card p {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        /* ---------------- BANNER ---------------- */
+        .banner {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .banner h2 {
+            margin-bottom: 5px;
+        }
+
+        .banner p {
+            color: #666;
+        }
+
+        .banner button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2879ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ---------------- RESPONSIVE ---------------- */
+        @media (max-width: 900px) {
+            .top-bar {
+                flex-wrap: wrap;
+            }
+
+            .search-box {
+                order: 3;
+                flex-basis: 100%;
+            }
+
+            .product-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            main {
+                width: 94%;
+            }
+
+            .product-row {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-products {
+                grid-template-columns: 1fr;
+            }
+
+            .header-right {
+                display: none;
+            }
+
+            .banner {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <span>Shop</span>Easy
+            </div>
+
+            <div class="search-box">
+                <span>🔍</span>
+                <input type="text" placeholder="Search for Products, Brands and More">
+            </div>
+
+            <div class="header-right">
+                <button>Login ▾</button>
+                <span>More ▾</span>
+                <span class="cart">🛒 Cart</span>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="#">For You</a>
+            <a href="#">Fashion</a>
+            <a href="#">Mobiles</a>
+            <a href="#">Electronics</a>
+            <a href="#">Beauty</a>
+            <a href="#">Home</a>
+            <a href="#">Appliances</a>
+            <a href="#">Toys</a>
+            <a href="#">Sports</a>
+            <a href="#">Furniture</a>
+            <a href="#">Books</a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <!-- Popular section -->
+        <section class="deal-section">
+            <h2>Popular Near You</h2>
+
+            <div class="product-row">
+                <div class="product-card">
+                    <div class="product-image watch">⌚</div>
+                    <h3>Stylish Watches</h3>
+                    <p>Deal of the Day</p>
+                    <strong>From ₹999</strong>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image toy">🚙</div>
+                    <h3>Remote Cars</h3>
+                    <p>Grab Big Discounts!</p>
+                    <strong>Min. 40% Off</strong>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image bottle">🧴</div>
+                    <h3>Water Bottles</h3>
+                    <p>Milton & More</p>
+                    <strong>From ₹129</strong>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image fashion">👗</div>
+                    <h3>Women's Fashion</h3>
+                    <p>Best Deals</p>
+                    <strong>From ₹249</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology section -->
+        <section class="tech-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Upcoming Deals on Tech</h2>
+                    <p>Grab the best electronics before they sell out.</p>
+                </div>
+                <button class="view-button">View All</button>
+            </div>
+
+            <div class="tech-products">
+                <div class="tech-card">
+                    <div class="tech-image phone">📱</div>
+                    <h3>Latest Smartphones</h3>
+                    <p>Starting from</p>
+                    <strong>₹14,999</strong>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-image fridge">🧊</div>
+                    <h3>Smart Refrigerators</h3>
+                    <p>Special discount</p>
+                    <strong>Up to 30% Off</strong>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-image laptop">💻</div>
+                    <h3>Gaming Laptops</h3>
+                    <p>Power your gaming</p>
+                    <strong>From ₹59,999</strong>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-image headphones">🎧</div>
+                    <h3>Wireless Headphones</h3>
+                    <p>Limited Time Offer</p>
+                    <strong>From ₹1,499</strong>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-image tv">📺</div>
+                    <h3>Smart TVs</h3>
+                    <p>Big screen deals</p>
+                    <strong>From ₹19,999</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Small banner -->
+        <section class="banner">
+            <div>
+                <h2>Big Savings Are Here!</h2>
+                <p>Discover exciting offers on your favourite products.</p>
+            </div>
+            <button>Shop Now</button>
+        </section>
+    </main>
+
+</body>
+</html>

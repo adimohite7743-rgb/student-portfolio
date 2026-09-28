@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Portal</title>
+    <style>
+        body { background-color: #f5f5f5; }
+        h1 { color: blue; }
+        h2 { color: darkgreen; }
+        .highlight { color: green; }
+        #student-name { color: blue; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Portal</h1>
+        <nav>
+            <a href="#">Home</a> | <a href="#">Profile</a> | <a href="#">Courses</a> | <a href="#">Register</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Student Profile</h2>
+            <table>
+                <tr><th>Field</th><th>Value</th></tr>
+                <tr><td>Name</td><td><span id="student-name">Rahul Sharma</span></td></tr>
+                <tr><td>Student ID</td><td>24BCE1001</td></tr>
+                <tr><td>Program</td><td class="highlight">Computer Science</td></tr>
+                <tr><td>Year</td><td>1st Year</td></tr>
+                <tr><td>Email</td><td><a href="mailto:rahul@example.com">rahul@example.com</a></td></tr>
+            </table>
+        </section>
+        <section>
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>Git</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Weekly Schedule</h2>
+            <table>
+                <tr><th>Day</th><th>9:00 AM</th><th>11:00 AM</th><th>2:00 PM</th></tr>
+                <tr><td>Monday</td><td>HTML</td><td>Mathematics</td><td>DSA</td></tr>
+                <tr><td>Tuesday</td><td>CSS</td><td>DBMS</td><td>English</td></tr>
+                <tr><td>Wednesday</td><td>JavaScript</td><td>DSA</td><td>Mathematics</td></tr>
+                <tr><td>Thursday</td><td>DBMS</td><td>HTML</td><td>Project</td></tr>
+                <tr><td>Friday</td><td>DSA</td><td>CSS</td><td>Workshop</td></tr>
+            </table>
+        </section>
+        <section>
+            <h2>Course Registration</h2>
+            <form>
+                <h3>Student Information</h3>
+                <label for="name">Name:</label> <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label> <input type="email" id="email" name="email"><br><br>
+                <label for="studentid">Student ID:</label> <input type="text" id="studentid" name="studentid"><br><br>
+                
+                <h3>Course Selection</h3>
+                <label for="course">Select Course:</label>
+                <select id="course" name="course">
+                    <option>Select Course</option>
+                    <option>HTML & CSS</option><option>JavaScript</option><option>Python</option>
+                    <option>Data Structures</option><option>Database Management</option>
+                </select>
+                
+                <h3>Preferred Learning Mode</h3>
+                <input type="radio" id="online" name="mode" value="online"><label for="online">Online</label>
+                <input type="radio" id="offline" name="mode" value="offline"><label for="offline">Offline</label>
+                
+                <h3>Skills You Already Know</h3>
+                <input type="checkbox" id="html" name="skills" value="HTML"><label for="html">HTML</label>
+                <input type="checkbox" id="css" name="skills" value="CSS"><label for="css">CSS</label>
+                <input type="checkbox" id="javascript" name="skills" value="JavaScript"><label for="javascript">JavaScript</label>
+                <input type="checkbox" id="python" name="skills" value="Python"><label for="python">Python</label><br><br>
+                
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Student Portal</p>
+    </footer>
+</body>
+</html>
